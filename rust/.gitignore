@@ -1,0 +1,16 @@
+# Rust build
+/target/
+**/*.rs.bk
+
+# IDE/editor
+/.vscode/
+.idea/
+*.swp
+*.swo
+
+# Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+
