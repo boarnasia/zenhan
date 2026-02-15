@@ -29,5 +29,13 @@ uninstall:
 	rm -f $(INSTALL_DIR)/$(BINARY_NAME)
 	@echo "Uninstalled."
 
+buildAll:
+	@echo "Building for both architectures..."
+	cargo build --release --target x86_64-pc-windows-gnu
+	cargo build --release --target i686-pc-windows-gnu
+	install -m 755 target/x86_64-pc-windows-gnu/release/$(BINARY_NAME) ./zenhan-x86_64.exe
+	install -m 755 target/i686-pc-windows-gnu/release/$(BINARY_NAME) ./zenhan-i686.exe
+
 clean:
 	cargo clean
+	rm ./zenhan-*.exe
