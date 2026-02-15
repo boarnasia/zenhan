@@ -35,6 +35,16 @@ To build this project for Windows, you need the following:
 
 - Any version of Visutal Studio with C++ Build tools
 
+If don't work exe file in wsl environment, you need `.wslconfig` as well.
+
+```config filename="$HOME.wslconfig"
+[interop]
+# **nessesary** for `zenhan.exe` to work in WSL
+# this enables the interop between Windows and WSL, allowing you to run Windows
+# executables from WSL.
+enabled=true
+```
+
 #### 2.1.2. Install
 
 Binary will be installed at `$HOME\.cargo\bin\zenhan.exe`
